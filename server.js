@@ -1,11 +1,12 @@
 // set env variable
 require('dotenv').config();
 
-// import module
+// import module and router
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const router = require('./routes/routes');
 
 // set up express app
 const app = express();
@@ -33,6 +34,7 @@ mongoose.connection.once('open', () => {
 app.get('/', (req, res) => {
 	res.send(`server is working`);
 });
+app.use('/', router);
 
 // listener
 const PORT = process.env.PORT || 4000;

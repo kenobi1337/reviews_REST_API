@@ -7,6 +7,7 @@ const reviewSchema = Schema({
 	author_id: String,
 	header: String,
 	body: String,
+	video: File,
 	stars: Number,
 	restaurant_id: String
 });
